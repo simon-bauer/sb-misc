@@ -24,7 +24,5 @@ VielEck >> drawOn: aCanvas [
 { #category : #initialize }
 VielEck >> ecken: ecken [
 	n := ecken.
-	self width: 800.
-	self height: 800.
-	
+	self changed.
 ]
