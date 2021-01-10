@@ -10,9 +10,9 @@ Class {
 
 { #category : #specs }
 VielEckPresenter class >> defaultSpec [
-	^ SpGridLayout new
-		add: #eckenNumberInput at: 1 @ 1;
-		add: #vielEckMorph at: 1 @ 2;
+	^ SpBoxLayout newVertical
+		add: #eckenNumberInput expand: false;
+		add: #vielEckMorph expand: true;
 		yourself
 ]
 
@@ -32,6 +32,7 @@ VielEckPresenter >> initializePresenter [
 		instantiate: (SpMorphPresenter new morph: (VielEck new ecken: 3)).
 	eckenNumberInput := self newNumberInput rangeMinimum: 3 maximum: 100.
 	eckenNumberInput number: 3.
+	eckenNumberInput autoAccept: true.
 	eckenNumberInput
 		whenNumberChangedDo: [ :number | vielEckMorph morph ecken: number ].
 	self focusOrder
