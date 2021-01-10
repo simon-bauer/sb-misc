@@ -9,7 +9,10 @@ Class {
 
 { #category : #drawing }
 VielEck >> drawOn: aCanvas [
+
 	| center radius point vertices |
+	self color: Color black.
+
 	center := self center.
 	radius := (self width min: self height) / 2.
 	vertices := OrderedCollection new.
@@ -18,7 +21,7 @@ VielEck >> drawOn: aCanvas [
 			(center y + ((2 * Float pi / n * (i-1)) cos * radius)).
 			vertices add: point.  ].
 	super drawOn: aCanvas.
-	aCanvas drawPolygon: vertices fillStyle: (SolidFillStyle color: Color black).
+	aCanvas drawPolygon: vertices fillStyle: (SolidFillStyle color: Color yellow).
 ]
 
 { #category : #initialize }

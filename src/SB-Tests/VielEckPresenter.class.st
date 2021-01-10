@@ -30,7 +30,7 @@ VielEckPresenter >> eckenNumberInput: anObject [
 VielEckPresenter >> initializePresenter [
 	vielEckMorph := self
 		instantiate: (SpMorphPresenter new morph: (VielEck new ecken: 3)).
-	eckenNumberInput := self newNumberInput rangeMinimum: 3 maximum: 100.
+	eckenNumberInput := self newNumberInput rangeMinimum: 3 maximum: 30.
 	eckenNumberInput number: 3.
 	eckenNumberInput autoAccept: true.
 	eckenNumberInput
