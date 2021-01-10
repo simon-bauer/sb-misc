@@ -27,12 +27,16 @@ VielEckPresenter >> eckenNumberInput: anObject [
 ]
 
 { #category : #initialization }
-VielEckPresenter >> initializePresenter [ 
-	vielEckMorph := self instantiate: (SpMorphPresenter new morph: (VielEck new ecken: 3)).
+VielEckPresenter >> initializePresenter [
+	vielEckMorph := self
+		instantiate: (SpMorphPresenter new morph: (VielEck new ecken: 3)).
 	eckenNumberInput := self newNumberInput rangeMinimum: 3 maximum: 100.
 	eckenNumberInput number: 3.
-	
-	eckenNumberInput whenNumberChangedDo: [ :number | vielEckMorph morph ecken: number ].
+	eckenNumberInput
+		whenNumberChangedDo: [ :number | vielEckMorph morph ecken: number ].
+	self focusOrder
+		add: eckenNumberInput;
+		add: vielEckMorph
 ]
 
 { #category : #accessing }
